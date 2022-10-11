@@ -11,4 +11,6 @@ let p = new Promise(function (resolve, reject) {
 
 p.then(function () {
   console.log("promise resolved!");
+}).catch(function () {
+  console.log("pronise rejected");
 });
