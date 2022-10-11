@@ -1,4 +1,5 @@
-let sentToAirport = false;
+//Promise解決了callback hell
+let sentToAirport = true;
 let p = new Promise(function (resolve, reject) {
   if (sentToAirport) {
     resolve("from resolve(): send to airport");
