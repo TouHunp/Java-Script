@@ -1,3 +1,4 @@
+//Async Await的目標是為了讓非同步code更貼近同步code 由promise演變
 function sendRequest() {
   return new Promise(function (resolve, reject) {
     setTimeout(function () {
@@ -19,3 +20,14 @@ async function getUsername() {
 }
 
 getUsername();
+
+async function getServerUsername() {
+  try {
+    let username = await fetch("https://jsonplaceholder.typicode.com/users");
+    username = await username.json();
+    console.log(username);
+  } catch (message) {
+    console.log(`Error: ${message}`);
+  }
+}
+getServerUsername();
