@@ -7,6 +7,8 @@ let p = new Promise(function (resolve, reject) {
   }
 });
 //message 用來接收resolve或reject 觸發回傳的值
+//then 會在非同步執行任務完成後被執行 一般會用來編寫處理超長任務返回的值
+//catch用來捕捉reject報錯 避免程式崩潰
 p.then(function (message) {
   console.log(`${message}-promise resolved`);
 }).catch(function (message) {
