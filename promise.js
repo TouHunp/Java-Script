@@ -1,16 +1,14 @@
-let sentToAirport = false;
+let sentToAirport = true;
 let p = new Promise(function (resolve, reject) {
   if (sentToAirport) {
-    console.log("sent to airport");
-    resolve();
+    resolve("from resolve(): send to airport");
   } else {
-    console.log("sent to cannot send to airport");
-    reject();
+    reject("form reject(): order cancelled");
   }
 });
 
-p.then(function () {
-  console.log("promise resolved!");
-}).catch(function () {
-  console.log("pronise rejected");
+p.then(function (message) {
+  console.log(`${message}-promise resolved`);
+}).catch(function (message) {
+  console.log(`${message}-promise rejected`);
 });
