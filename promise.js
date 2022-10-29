@@ -20,6 +20,7 @@ let f = fetch("https://jsonplaceholder.typicode.com/users");
 
 f.then(function (userdata) {
   // 將獲取數據轉換成json格式 再次建立promise 所以讀取需要再加一個.then
+  console.log(userdata);
   return userdata.json();
 }).then(function (jsondata) {
   console.log(jsondata);
